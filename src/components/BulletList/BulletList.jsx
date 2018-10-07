@@ -4,13 +4,10 @@ import "./BulletList.css";
 class BulletList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      bullets: this.props.bullets,
-    };
   }
 
-  render() {
-    const listElements = this.state.bullets.map((bulletPoint) => {
+  createListElements(bullets) {
+    const listElements = bullets.map((bulletPoint) => {
       const boldText = bulletPoint[0]
       const regText = bulletPoint[1]
 
@@ -22,9 +19,13 @@ class BulletList extends React.Component {
       )
     })
 
+    return listElements
+  }
+
+  render() {
     return(
       <ul style={{textAlign: 'left'}}>
-        {listElements}
+        {this.createListElements(this.props.bullets)}
       </ul>
     )
   }
