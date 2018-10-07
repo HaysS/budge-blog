@@ -2,16 +2,22 @@ import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-scroll";
 import YouTube from 'react-youtube';
-import PostListing from "../components/PostListing/PostListing";
-import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+
+//Layouts
 import Drawer from "../layouts/Drawer/Drawer";
-import Navigation from "../components/Navigation/Navigation";
 import SiteWrapper from "../layouts/SiteWrapper/SiteWrapper";
-import Footer from "../components/Footer/Footer";
 import MainHeader from "../layouts/MainHeader/MainHeader";
 import MainNav from "../layouts/MainNav/MainNav";
 import MainContent from "../layouts/MainContent/MainContent";
+import PaginatedContent from "../layouts/PaginatedContent/PaginatedContent";
+
+//Components
+import Navigation from "../components/Navigation/Navigation";
+import BulletList from "../components/BulletList/BulletList"
+import PostListing from "../components/PostListing/PostListing";
+import SEO from "../components/SEO/SEO";
+import Footer from "../components/Footer/Footer";
 import BlogLogo from "../components/BlogLogo/BlogLogo";
 import MenuButton from "../components/MenuButton/MenuButton";
 import PageTitle from "../components/PageTitle/PageTitle";
@@ -19,7 +25,6 @@ import PageImage from "../components/PageImage/PageImage";
 import PageDescription from "../components/PageDescription/PageDescription";
 import PageEmailForm from "../components/PageEmailForm/PageEmailForm";
 import ProductVote from "../components/ProductVote/ProductVote";
-import PaginatedContent from "../layouts/PaginatedContent/PaginatedContent";
 import SocialMediaIcons from "../components/SocialMediaIcons/SocialMediaIcons";
 
 const step1Header1 = 'Track Your Spending As You Go'
@@ -254,7 +259,7 @@ class IndexTemplate extends React.Component {
                     <div className="small-col small-right text">
                         <h3>{step1Header2}</h3>
                         <p style={{}}>{step1Text}</p>
-                        {bulletList(step1BulletPoints)}
+                        <BulletList bullets={step1BulletPoints} />
                     </div>
                   </div>
                 </div>
@@ -286,7 +291,7 @@ class IndexTemplate extends React.Component {
                     <div className="small-col small-right text">
                       <h3>{step2Header2}</h3>
                       <p style={{}}>{step2Text}</p>
-                      {bulletList(step2BulletPoints)}
+                        <BulletList bullets={step2BulletPoints} />
                     </div>
                   </div>
                 </div>
