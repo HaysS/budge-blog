@@ -62,26 +62,6 @@ const allAccountsScreenUrl = './images/all-accounts-screen.png'
 const addTransactionScreenUrl = './images/add-transaction-screen.png'
 const iphone6Img = './images/iphone6.png'
 
-const bulletList = (bulletPoints) => {
-  const listElements = bulletPoints.map((bulletPoint) => {
-    const boldText = bulletPoint[0]
-    const regText = bulletPoint[1]
-
-    return(
-      <li>
-        <strong>{boldText}</strong>
-        <p>{regText}</p>
-      </li>
-    )
-  })
-
-  return(
-    <ul style={{textAlign: 'left'}}>
-      {listElements}
-    </ul>
-  )
-}
-
 const youtubeEmbed = () => {
     const aspectRatio = 16/9
     const height = 465
